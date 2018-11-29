@@ -1,0 +1,37 @@
+
+
+import { Router, Request, Response} from 'express';
+
+const router = Router();
+
+
+router.get('/mensajes', (req: Request, res: Response) => {
+    res.json({
+        ok:true,
+        mensaje: 'No todo está bien!!!'
+    });
+});
+
+router.post('/mensajes', (req: Request, res: Response) =>{
+    
+    const tags = req.body.tags;
+
+    res.json({
+        ok: true,
+        tags: "tags"
+    })
+});
+
+router.post('/mensajes/:id', (req: Request, res: Response) =>{
+    
+    const tags = req.body.tags;
+    const de = req.body.de;
+    const id = req.params.id;
+
+    res.json({
+        ok: true,
+        id: id
+    });
+});
+
+export default router;
